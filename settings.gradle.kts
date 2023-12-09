@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "WatchApp"
 include(":app")
 include(":data:model")
+include(":domain")
