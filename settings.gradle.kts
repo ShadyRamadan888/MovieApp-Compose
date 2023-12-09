@@ -17,3 +17,4 @@ rootProject.name = "WatchApp"
 include(":app")
 include(":data:model")
 include(":domain")
+include(":data:service")
