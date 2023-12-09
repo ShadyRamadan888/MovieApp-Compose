@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MovieApp-Compose"
+rootProject.name = "WatchApp"
 include(":app")
 include(":data:model")
