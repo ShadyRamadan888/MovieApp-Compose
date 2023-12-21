@@ -51,8 +51,18 @@ android {
 
 dependencies {
     implementation(libs.androidx.core.ktx)
+
+    implementation(libs.koin)
+
+
+
+    implementation(libs.koin.compose)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)
+
+    implementation(project(Modules.dataModel))
+    implementation(project(Modules.dataService))
+    implementation(project(Modules.dataRepo))
 }
