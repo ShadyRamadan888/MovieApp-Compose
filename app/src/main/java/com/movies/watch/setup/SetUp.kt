@@ -1,6 +1,7 @@
 package com.movies.watch.setup
 
 import android.content.Context
+import com.movies.movies_usecase.di.moviesUseCaseModule
 import com.movies.repo.di.repoModule
 import com.movies.service.di.serviceModule
 import org.koin.android.ext.koin.androidContext
@@ -20,5 +21,6 @@ fun Context.initStartupComponents() {
 
 private fun getKoinModules(): List<Module> = listOf(
     repoModule,
-    serviceModule
+    serviceModule,
+    moviesUseCaseModule
 )

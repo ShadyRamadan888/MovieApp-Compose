@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/data/repo" />
             <option value="$PROJECT_DIR$/data/service" />
             <option value="$PROJECT_DIR$/domain" />
+            <option value="$PROJECT_DIR$/domain/movies_usecase" />
           </set>
         </option>
       </GradleProjectSettings>

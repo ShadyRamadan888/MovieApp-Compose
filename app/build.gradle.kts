@@ -65,4 +65,7 @@ dependencies {
     implementation(project(Modules.dataModel))
     implementation(project(Modules.dataService))
     implementation(project(Modules.dataRepo))
+
+    //domain
+    implementation(project(Modules.moviesUseCase))
 }
