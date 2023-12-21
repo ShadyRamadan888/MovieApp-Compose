@@ -9,9 +9,9 @@ import kotlinx.coroutines.flow.flow
 class MoviesRepoImpl(
     private val movieApiService: MovieApiService
 ) : MoviesRepo {
-    override fun getPopularMovies(): Flow<List<Movie>> = flow {
+    override fun getMoviesWithCategoryUrl(categoryUrl: String): Flow<List<Movie>> = flow {
         val response = movieApiService
-            .getMoviesByCategory(Constants.MOVIES.POPULAR)
+            .getMoviesByCategory(categoryUrl)
             .listOfMovies
         emit(response)
     }
