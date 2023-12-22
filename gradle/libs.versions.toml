@@ -12,6 +12,7 @@ kotlinx-serialization-json = "1.6.0"
 kotlin = "1.8.10"
 plugin-serialization = "1.9.21"
 coroutines = "1.7.1"
+coil = "2.4.0"
 
 koin = "3.5.0"
 
@@ -33,6 +34,7 @@ compose-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 compose-material3 = { module = "androidx.compose.material3:material3" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+compose-coil = {module = "io.coil-kt:coil-compose", version.ref = "coil"}
 
 kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
 pluginKotlinSerialization = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
@@ -60,7 +62,8 @@ compose = [
     "compose-ui",
     "compose-graphics",
     "compose-preview",
-    "compose-material3"
+    "compose-material3",
+    "compose-coil"
 ]
 coroutines = ["kotlinx-coroutines-core", "kotlinx-coroutines-android"]
 
