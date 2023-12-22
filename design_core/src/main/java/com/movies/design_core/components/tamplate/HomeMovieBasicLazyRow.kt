@@ -1,4 +1,4 @@
-package com.movies.watch.ui.components.tamplate
+package com.movies.design_core.components.tamplate
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -6,8 +6,8 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
-import com.movies.watch.ui.components.Movie
-import com.movies.watch.ui.components.cards.TallMovieImageItem
+import com.movies.design_core.components.cards.TallMovieImageItem
+import com.movies.model.movie.Movie
 
 
 @Composable
@@ -20,9 +20,9 @@ fun HomeMovieBasicLazyRow(
             horizontal = 16.dp,
         )
     ) {
-        items(movieList) {
-            TallMovieImageItem(it.poster_path)
-        }
+       items(movieList){
+           TallMovieImageItem(it.backdropPath!!)
+       }
     }
 
 }

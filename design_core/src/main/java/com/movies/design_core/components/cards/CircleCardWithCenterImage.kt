@@ -1,4 +1,4 @@
-package com.movies.watch.ui.components.cards
+package com.movies.design_core.components.cards
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -14,7 +14,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.movies.watch.R
+import com.movies.design_core.R
 import com.movies.watch.ui.theme.TransparentBackground
 
 @Composable

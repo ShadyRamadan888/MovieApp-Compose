@@ -1,4 +1,4 @@
-package com.movies.watch.ui.components.cards
+package com.movies.design_core.components.cards
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -15,7 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.movies.watch.ui.components.texts.RegularText
+import com.movies.design_core.components.texts.RegularText
 import com.movies.watch.ui.theme.LargeTextColor
 import com.movies.watch.ui.theme.ReggaeOne
 import com.movies.watch.ui.theme.TransparentBackground

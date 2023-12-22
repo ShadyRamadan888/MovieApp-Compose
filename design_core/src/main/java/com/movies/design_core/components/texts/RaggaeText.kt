@@ -1,4 +1,4 @@
-package com.movies.watch.ui.components.texts
+package com.movies.design_core.components.texts
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text

@@ -1,4 +1,4 @@
-package com.movies.watch.ui.components.cards
+package com.movies.design_core.components.cards
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.height

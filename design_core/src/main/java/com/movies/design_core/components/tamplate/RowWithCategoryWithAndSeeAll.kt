@@ -1,4 +1,4 @@
-package com.movies.watch.ui.components.tamplate
+package com.movies.design_core.components.tamplate
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -11,7 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.movies.watch.ui.components.texts.RegularText
+import com.movies.design_core.components.texts.RegularText
 import com.movies.watch.ui.theme.GrayText
 
 
