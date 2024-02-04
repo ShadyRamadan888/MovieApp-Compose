@@ -9,6 +9,15 @@ apply<MainGradlePlugin>()
 android {
     namespace = "com.movies.design_core"
 
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.3"
+    }
 }
 
 dependencies {

@@ -15,5 +15,5 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.kotlin.serialization)
-
+    implementation(libs.kotlinx.coroutines.core)
 }

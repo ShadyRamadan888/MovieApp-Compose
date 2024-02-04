@@ -67,5 +67,9 @@ dependencies {
     implementation(project(Modules.dataRepo))
 
     //domain
-    implementation(project(Modules.moviesUseCase))
+    implementation(project(Modules.popularMoviesUseCase))
+    implementation(project(Modules.topRatedMoviesUseCase))
+
+    //features
+    implementation(project(Modules.featureHome))
 }

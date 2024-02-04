@@ -18,6 +18,10 @@ koin = "3.5.0"
 
 ktor = "2.3.0"
 
+lifecycle = "2.6.0-alpha05"
+
+compose = "1.4.3"
+navigation = "2.7.1"
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
@@ -27,6 +31,7 @@ androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-j
 androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
 junit = { module = "junit:junit", version.ref = "junit" }
 
+compose-navigation = {module = "androidx.navigation:navigation-compose", version.ref = "navigation"}
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "bom" }
 compose-ui = { module = "androidx.compose.ui:ui" }
 compose-graphics = { module = "androidx.compose.ui:ui-graphics" }
@@ -35,6 +40,8 @@ compose-material3 = { module = "androidx.compose.material3:material3" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 compose-coil = {module = "io.coil-kt:coil-compose", version.ref = "coil"}
+composeRuntime = { module = "androidx.compose.runtime:runtime", version.ref = "compose" }
+
 
 kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
 pluginKotlinSerialization = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
@@ -57,14 +64,34 @@ kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-c
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 
+androidx-lifecycle-runtimeCompose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
+lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "lifecycle" }
+lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime", version.ref = "lifecycle" }
+lifecycle-viewmodel-savedstate = { module = "androidx.lifecycle:lifecycle-viewmodel-savedstate", version.ref = "lifecycle" }
+lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", version.ref = "lifecycle" }
+
 [bundles]
 compose = [
     "compose-ui",
     "compose-graphics",
     "compose-preview",
     "compose-material3",
-    "compose-coil"
+    "compose-coil",
+    "composeRuntime",
+    "compose-navigation"
 ]
+lifecycle = [
+    "androidx-lifecycle-runtimeCompose",
+    "lifecycle-viewmodel-compose",
+    "lifecycle-process",
+    "lifecycle-viewmodel",
+    "lifecycle-viewmodel-ktx",
+    "lifecycle-runtime",
+    "lifecycle-viewmodel-savedstate"
+]
+
 coroutines = ["kotlinx-coroutines-core", "kotlinx-coroutines-android"]
 
 [plugins]
