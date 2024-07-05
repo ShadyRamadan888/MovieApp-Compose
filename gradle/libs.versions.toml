@@ -1,27 +1,31 @@
 [versions]
-activity-compose = "1.8.1"
+activity-compose = "1.8.2"
 androidx-junit = "1.1.5"
-core-ktx = "1.9.0"
+core-ktx = "1.12.0"
 espresso-core = "3.5.1"
 junit = "4.13.2"
-lifecycle-runtime-ktx = "2.6.2"
-bom = "2023.03.00"
+lifecycle-runtime-ktx = "2.7.0"
+bom = "2024.02.00"
 appcompat = "1.6.1"
-material = "1.10.0"
+material = "1.11.0"
 kotlinx-serialization-json = "1.6.0"
 kotlin = "1.8.10"
 plugin-serialization = "1.9.21"
 coroutines = "1.7.1"
 coil = "2.4.0"
+accompanist = "0.29.0-alpha"
+constraint-layout = "1.0.1"
+slf4j = "2.0.12"
+paging = "3.2.1"
 
 koin = "3.5.0"
 
 ktor = "2.3.0"
 
-lifecycle = "2.6.0-alpha05"
+lifecycle = "2.8.0-alpha01"
 
-compose = "1.4.3"
-navigation = "2.7.1"
+compose = "1.6.1"
+navigation = "2.7.7"
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
@@ -30,8 +34,11 @@ androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", vers
 androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-junit" }
 androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
 junit = { module = "junit:junit", version.ref = "junit" }
+slf4j = {module = "org.slf4j:slf4j-api", version.ref = "slf4j"}
 
-compose-navigation = {module = "androidx.navigation:navigation-compose", version.ref = "navigation"}
+accompanist-placeholder = { module = "com.google.accompanist:accompanist-placeholder-material", version.ref = "accompanist" }
+
+compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "navigation" }
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "bom" }
 compose-ui = { module = "androidx.compose.ui:ui" }
 compose-graphics = { module = "androidx.compose.ui:ui-graphics" }
@@ -39,15 +46,17 @@ compose-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 compose-material3 = { module = "androidx.compose.material3:material3" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-compose-coil = {module = "io.coil-kt:coil-compose", version.ref = "coil"}
+compose-coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 composeRuntime = { module = "androidx.compose.runtime:runtime", version.ref = "compose" }
-
+compose-ui-util = { module = "androidx.compose.ui:ui-util", version.ref = "compose" }
+compose-constraint = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraint-layout" }
+compose-paging = {module = "androidx.paging:paging-compose", version.ref = "paging"}
 
 kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
 pluginKotlinSerialization = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
 
 koin = { module = "io.insert-koin:koin-android", version.ref = "koin" }
-koin-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin"}
+koin-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-unit-test = { module = "io.insert-koin:koin-test-junit4", version.ref = "koin" }
 
@@ -80,7 +89,10 @@ compose = [
     "compose-material3",
     "compose-coil",
     "composeRuntime",
-    "compose-navigation"
+    "compose-navigation",
+    "compose-ui-util",
+    "accompanist-placeholder",
+    "compose-constraint"
 ]
 lifecycle = [
     "androidx-lifecycle-runtimeCompose",

@@ -1,3 +1,5 @@
+import com.android.build.api.dsl.LintOptions
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -22,7 +24,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -54,8 +56,6 @@ dependencies {
 
     implementation(libs.koin)
 
-
-
     implementation(libs.koin.compose)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -69,7 +69,19 @@ dependencies {
     //domain
     implementation(project(Modules.popularMoviesUseCase))
     implementation(project(Modules.topRatedMoviesUseCase))
+    implementation(project(Modules.nowPlayingUseCase))
+    implementation(project(Modules.upcomingUseCase))
 
     //features
     implementation(project(Modules.featureHome))
+
+    //design
+    implementation(project(Modules.designCore))
+
+    //slf4j
+    implementation(libs.slf4j)
+    implementation(libs.compose.paging)
+
+    //repo
+    implementation(project(Modules.dataRepo))
 }

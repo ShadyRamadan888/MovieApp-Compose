@@ -2,74 +2,82 @@ package com.movies.feature_home.screens
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.movies.model.base.RetryTrigger
+import com.movies.feature_home.navigation.HomeEffect
 import com.movies.model.base.SectionUiState
-import com.movies.model.base.retryableFlow
 import com.movies.movies_usecase.IPopularMoviesUseCase
+import com.movies.now_playing_usecase.INowPlayingMoviesUseCase
 import com.movies.service.Constants
 import com.movies.top_rated_movies_usecase.ITopRatedMoviesUseCase
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
+import com.movies.upcoming_usecase.IUpcomingMoviesUseCase
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onStart
-import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
 class HomeViewModel(
     private val popularMoviesUseCase: IPopularMoviesUseCase,
-    private val topRatedMoviesUseCase: ITopRatedMoviesUseCase
+    private val topRatedMoviesUseCase: ITopRatedMoviesUseCase,
+    private val nowPlayingMoviesUseCase: INowPlayingMoviesUseCase,
+    private val upcomingMoviesUseCase: IUpcomingMoviesUseCase,
 ) : ViewModel() {
 
-    private val popularMoviesRetryTrigger = RetryTrigger()
-    private val topRatedMoviesRetryTrigger = RetryTrigger()
-
-    val loadPopularMoviesUiState: StateFlow<SectionUiState> = loadPopularMovie()
-
-    private fun loadPopularMovie(): StateFlow<SectionUiState> {
-        return launchStateFlow(
-            flow = popularMoviesUseCase(Constants.MOVIES.POPULAR).map { movies ->
-                SectionUiState.Success(movies)
-            },
-            retryTrigger = popularMoviesRetryTrigger,
-            initialState = SectionUiState.Loading,
-            errorState = { SectionUiState.Error(it) }
-        )
+    init {
+        loadPopularMovies()
+        loadTopRatedPopularMovies()
+        loadNowPlayingMovies()
+        loadUpcomingMovies()
     }
 
-    val loadTopRatedMoviesUiState: StateFlow<SectionUiState> = topRatedPopularMovie()
+    private var _upcomingMoviesUiState = MutableStateFlow<SectionUiState>(SectionUiState.Loading)
+    val upcomingMoviesUiState = _upcomingMoviesUiState
 
-    private fun topRatedPopularMovie(): StateFlow<SectionUiState> {
-        return launchStateFlow(
-            flow = topRatedMoviesUseCase(Constants.MOVIES.TOP_RATED).map { movies ->
-                SectionUiState.Success(movies)
-            },
-            retryTrigger = topRatedMoviesRetryTrigger,
-            initialState = SectionUiState.Loading,
-            errorState = { SectionUiState.Error(it) }
-        )
+
+    private fun loadUpcomingMovies() {
+        viewModelScope.launch {
+            upcomingMoviesUseCase.invoke(Constants.MoviesEndpoints.UPCOMING)
+                .map { SectionUiState.Success(it) }
+                .catch { _upcomingMoviesUiState.value = SectionUiState.Loading }
+                .collect { _upcomingMoviesUiState.value = it }
+        }
+    }
+
+    private var _nowPlayingMoviesUiState = MutableStateFlow<SectionUiState>(SectionUiState.Loading)
+    val nowPlayingMoviesUiState = _nowPlayingMoviesUiState
+
+
+    private fun loadNowPlayingMovies() {
+        viewModelScope.launch {
+            nowPlayingMoviesUseCase.invoke(Constants.MoviesEndpoints.NOW_PLAYING)
+                .map { SectionUiState.Success(it) }
+                .catch { _nowPlayingMoviesUiState.value = SectionUiState.Loading }
+                .collect { _nowPlayingMoviesUiState.value = it }
+        }
     }
 
 
+    private var _popularMoviesUiState = MutableStateFlow<SectionUiState>(SectionUiState.Loading)
+    val popularMoviesUiState = _popularMoviesUiState
 
-    protected fun <T> launchStateFlow(
-        flow: Flow<T>,
-        retryTrigger: RetryTrigger,
-        errorState: (Throwable) -> T,
-        initialState: T
-    ): StateFlow<T> {
-        return retryableFlow(retryTrigger) {
-            flow.onStart { emit(initialState) }.catch {
-                emit(errorState(it))
-            }
-        }.flowOn(Dispatchers.IO).stateIn(
-            scope = viewModelScope,
-            started = SharingStarted.WhileSubscribed(5000L),
-            initialValue = initialState
-        )
+
+    private fun loadPopularMovies() {
+        viewModelScope.launch {
+            popularMoviesUseCase.invoke(Constants.MoviesEndpoints.POPULAR)
+                .map { SectionUiState.Success(it) }
+                .catch { _popularMoviesUiState.value = SectionUiState.Loading }
+                .collect { _popularMoviesUiState.value = it }
+        }
+    }
+
+    private var _topRatedMoviesUiState =
+        MutableStateFlow<SectionUiState>(SectionUiState.Loading)
+    val topRatedMoviesUiState = _topRatedMoviesUiState
+    private fun loadTopRatedPopularMovies() {
+        viewModelScope.launch {
+            topRatedMoviesUseCase.invoke(Constants.MoviesEndpoints.TOP_RATED)
+                .map { SectionUiState.Success(it) }
+                .catch { _topRatedMoviesUiState.value = SectionUiState.Loading }
+                .collect { _topRatedMoviesUiState.value = it }
+        }
     }
 
 }

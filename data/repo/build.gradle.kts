@@ -17,4 +17,5 @@ dependencies {
     implementation(libs.kotlinx.coroutines.core)
     implementation(project(Modules.dataService))
     implementation(project(Modules.dataModel))
+    implementation(libs.compose.paging)
 }

@@ -1,6 +1,5 @@
 package com.movies.design_core.components.sections
 
-import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.lazy.LazyRow
@@ -13,6 +12,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.movies.design_core.components.items.TallMovieImageItem
+import com.movies.design_core.components.progress_bars.CircularIndeterminateProgressBar
+import com.movies.design_core.mock.movieItemsMock
 import com.movies.model.base.SectionUiState
 import com.movies.model.movie.Movie
 import com.movies.model.movie.MovieResponse
@@ -23,34 +24,32 @@ fun PopularMovieHorizontalSection(
     loadPopularMoviesUiState: SectionUiState
 ) {
 
-    var movies by remember { mutableStateOf(emptyList<Movie>()) }
-    var isMoviesLoading by remember { mutableStateOf(true) }
-    var showMovies by remember { mutableStateOf(true) }
+    var popularMovies by remember { mutableStateOf(emptyList<Movie>()) }
+    var isPopularMoviesLoading by remember { mutableStateOf(true) }
 
     when (loadPopularMoviesUiState) {
-        is SectionUiState.Loading -> isMoviesLoading = true
+        is SectionUiState.Loading -> isPopularMoviesLoading = true
         is SectionUiState.Success<*> -> {
-            isMoviesLoading = false
-            movies = loadPopularMoviesUiState.data as List<Movie>? ?: emptyList()
-            Log.v("SHR",movies.toString())
-            showMovies = movies.isNotEmpty()
+            isPopularMoviesLoading = false
+            popularMovies = loadPopularMoviesUiState.data as List<Movie>? ?: emptyList()
         }
 
-        is SectionUiState.Error -> isMoviesLoading = false
-        is SectionUiState.Idle -> isMoviesLoading = false
+        is SectionUiState.Error -> isPopularMoviesLoading = false
     }
 
-    if (showMovies) {
+    if (isPopularMoviesLoading) {
+        CircularIndeterminateProgressBar(true)
+    } else {
         LazyRow(
             horizontalArrangement = Arrangement.spacedBy(16.dp),
             contentPadding = PaddingValues(
                 horizontal = 16.dp,
             )
         ) {
-            items(movies) { item ->
+            items(popularMovies) { item ->
                 TallMovieImageItem(
                     modifier = modifier,
-                    requireNotNull(item)
+                    item,
                 )
             }
         }

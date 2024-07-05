@@ -3,7 +3,7 @@ package com.movies.watch.ui.theme
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import com.movies.watch.R
+import com.movies.design_core.R
 
 val Poppins = FontFamily(
     Font(R.font.poppins_regular, weight = FontWeight.Normal),

@@ -16,9 +16,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.movies.design_core.components.texts.RegularText
-import com.movies.watch.ui.theme.LargeTextColor
+import com.movies.design_core.ui.theme.LargeTextColor
 import com.movies.watch.ui.theme.ReggaeOne
-import com.movies.watch.ui.theme.TransparentBackground
+import com.movies.design_core.ui.theme.TransparentBackground
 
 
 @Composable

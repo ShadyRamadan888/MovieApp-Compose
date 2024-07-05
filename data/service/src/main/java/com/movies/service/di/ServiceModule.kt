@@ -7,6 +7,7 @@ import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.logging.LogLevel
 import io.ktor.client.plugins.logging.Logging
 import io.ktor.serialization.kotlinx.json.json
+import org.koin.core.module.dsl.factoryOf
 import org.koin.dsl.module
 
 val serviceModule = module {
@@ -24,6 +25,5 @@ val serviceModule = module {
     single {
         MovieApiService(get())
     }
-
 
 }

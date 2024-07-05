@@ -2,9 +2,11 @@ package com.movies.watch.setup
 
 import android.content.Context
 import com.movies.movies_usecase.di.PopularMoviesUseCaseModule
+import com.movies.now_playing_usecase.di.nowPlayingModule
 import com.movies.repo.di.repoModule
 import com.movies.service.di.serviceModule
 import com.movies.top_rated_movies_usecase.di.topRatedMoviesModule
+import com.movies.upcoming_usecase.di.upcomingMoviesModule
 import com.movies.watch.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -26,5 +28,7 @@ private fun getKoinModules(): List<Module> = listOf(
     serviceModule,
     PopularMoviesUseCaseModule,
     topRatedMoviesModule,
-    viewModelModule
+    viewModelModule,
+    nowPlayingModule,
+    upcomingMoviesModule
 )

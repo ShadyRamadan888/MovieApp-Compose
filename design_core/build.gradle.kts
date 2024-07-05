@@ -28,6 +28,11 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)
+    debugImplementation ("androidx.compose.ui:ui-tooling:1.0.0-rc01")
 
     implementation(project(Modules.dataModel))
+    implementation(libs.compose.paging)
+
+    //service
+    implementation(project(Modules.dataService))
 }

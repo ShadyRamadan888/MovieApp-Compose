@@ -27,4 +27,5 @@ dependencies {
     implementation(libs.ktor.android)
     implementation(libs.ktor.auth)
     implementation(project(Modules.dataModel))
+    implementation(libs.compose.paging)
 }

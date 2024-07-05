@@ -1,4 +1,4 @@
-package com.movies.watch.ui.theme
+package com.movies.design_core.ui.theme
 
 import android.app.Activity
 import android.os.Build
@@ -14,17 +14,20 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
+import com.movies.watch.ui.theme.Typography
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
+    primary = ThemeColors.Dark.primary,
     secondary = PurpleGrey80,
-    tertiary = Pink80
+    tertiary = Pink80,
+    background = ThemeColors.Dark.background,
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
+    primary = ThemeColors.Light.primary,
     secondary = PurpleGrey40,
-    tertiary = Pink40
+    tertiary = Pink40,
+    background = ThemeColors.Light.background,
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),

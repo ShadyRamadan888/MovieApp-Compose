@@ -1,6 +1,7 @@
 package gradletools
 
 import com.android.build.api.dsl.LibraryExtension
+import com.android.build.gradle.internal.dsl.checkShrinkResourceEligibility
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
