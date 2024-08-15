@@ -1,13 +1,9 @@
 package com.movies.repo.movies
 
-import android.util.Log
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.movies.model.movie.Movie
-import com.movies.model.movie.MovieResponse
-import com.movies.service.Constants
-import com.movies.service.Result
 import com.movies.service.factories.ResultPagingSource
 import com.movies.service.map
 import com.movies.service.movie.MovieApiService
@@ -31,7 +27,7 @@ class MoviesRepoImpl(
             enablePlaceholders = false
         ),
         pagingSourceFactory = {
-            ResultPagingSource { page, pageSize ->
+            ResultPagingSource { page, _ ->
                 movieApiService.getAllPopularMovies(page)
                     .map { result ->
                         result.listOfMovies.ifEmpty {

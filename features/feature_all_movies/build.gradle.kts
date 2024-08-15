@@ -8,6 +8,15 @@ plugins {
 apply<MainGradlePlugin>()
 android {
     namespace = "com.movies.feature_all_movies"
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.3"
+    }
 }
 
 dependencies {

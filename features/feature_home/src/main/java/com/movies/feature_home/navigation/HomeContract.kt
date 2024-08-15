@@ -14,6 +14,5 @@ sealed class HomeEffect {
         object ToUpcomingMovies : HomeNavigation()
         object ToTopRatedMovies : HomeNavigation()
         object ToPopularMovies : HomeNavigation()
-        //data class ToMovieDetails(val movieId: Int) : HomeNavigation()
     }
 }
