@@ -189,3 +189,13 @@ Rdomain/movies_usecase/build/intermediates/incremental/mergeDebugShaders/merger.
 Sdomain/movies_usecase/build/intermediates/incremental/packageDebugAssets/merger.xml,4\0\40ee30caf5e2079f849f23ad438b64e5247fc85c
 Å
 Q.idea/sonarlint/securityhotspotstore/4/d/4db679d058752d4c53548c70eafdea080588821b,c\f\cf504d6a314213b7ed4fcda1d230bec887b4e025
+S
+#buildSrc/src/main/kotlin/Modules.kt,9\8\9838349f15f060c03457518e2b77bc6242a79db5
+Y
+)buildSrc/src/main/kotlin/ProjectConfig.kt,7\4\741e0a75e8953976433c7fec72f113cf5918505f
+h
+8buildSrc/src/main/kotlin/gradletools/MainGradlePlugin.kt,1\3\13be02880dfdccee0e1526a0380f41394566ba11
+K
+data/model/build.gradle.kts,3\5\350a535e8d6dd829a8a183c29a34ff76c0810017
+h
+8buildSrc/src/main/kotlin/gradletools/ConfigureCompose.kt,b\2\b26f09da861894a54f97595d501b6b97716d721c

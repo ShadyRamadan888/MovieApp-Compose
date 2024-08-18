@@ -1,3 +1,4 @@
+import gradletools.ConfigureCompose
 import gradletools.MainGradlePlugin
 
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
@@ -6,17 +7,9 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 apply<MainGradlePlugin>()
+apply<ConfigureCompose>()
 android {
     namespace = "com.movies.feature_all_movies"
-    kotlinOptions {
-        jvmTarget = "17"
-    }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
-    }
 }
 
 dependencies {
