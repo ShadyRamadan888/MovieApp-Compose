@@ -1,5 +1,6 @@
 package com.movies.repo.movies
 
+import android.util.Log
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
@@ -18,6 +19,7 @@ class MoviesRepoImpl(
             .getMoviesByCategory(categoryUrl)
             .listOfMovies
         emit(response)
+        Log.v("testRepo",response.toString())
     }
 
     override fun streamMovies(): Flow<PagingData<Movie>> = Pager(

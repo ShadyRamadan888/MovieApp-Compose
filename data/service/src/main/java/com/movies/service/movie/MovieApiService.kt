@@ -1,6 +1,6 @@
 package com.movies.service.movie
 
-import com.movies.model.movie.Movie
+import android.util.Log
 import com.movies.model.movie.MovieResponse
 import com.movies.service.Constants
 import com.movies.service.fetch
