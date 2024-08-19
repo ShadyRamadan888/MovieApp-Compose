@@ -44,4 +44,7 @@ dependencies {
 
     //repo
     implementation(project(Modules.dataRepo))
+
+    //features
+    implementation(project(Modules.featureAllMovies))
 }

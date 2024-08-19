@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface MoviesRepo {
     fun getMoviesWithCategoryUrl(categoryUrl: String): Flow<List<Movie>>
-    fun streamMovies(): Flow<PagingData<Movie>>
+    fun getPagingMoviesByCategory(category: String): Flow<PagingData<Movie>>
 }

@@ -15,4 +15,5 @@ dependencies {
     implementation(project(Modules.dataRepo))
     implementation(project(Modules.dataModel))
     implementation(libs.koin)
+    implementation(libs.compose.paging)
 }

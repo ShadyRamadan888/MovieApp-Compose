@@ -24,9 +24,9 @@ import org.koin.compose.koinInject
 @Composable
 fun MockScreen() {
 
-    val repo: MoviesRepo = koinInject()
-    val lazyItem = repo.streamMovies().collectAsLazyPagingItems()
-
-    GridMoviesVerticallySection(lazyItem)
+//    val repo: MoviesRepo = koinInject()
+//    val lazyItem = repo.streamMovies().collectAsLazyPagingItems()
+//
+//    GridMoviesVerticallySection(lazyItem)
 
 }

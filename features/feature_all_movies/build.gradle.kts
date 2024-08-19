@@ -28,10 +28,7 @@ dependencies {
     implementation(project(Modules.dataModel))
     implementation(project(Modules.dataService))
     //domain
-    implementation(project(Modules.popularMoviesUseCase))
-    implementation(project(Modules.topRatedMoviesUseCase))
-    implementation(project(Modules.nowPlayingUseCase))
-    implementation(project(Modules.upcomingUseCase))
+    implementation(project(Modules.allPagingMoviesUseCase))
     //paging
     implementation(libs.compose.paging)
     //repo
