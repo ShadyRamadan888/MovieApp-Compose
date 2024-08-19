@@ -1,5 +1,3 @@
-import com.android.build.api.dsl.LintOptions
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -71,9 +69,11 @@ dependencies {
     implementation(project(Modules.topRatedMoviesUseCase))
     implementation(project(Modules.nowPlayingUseCase))
     implementation(project(Modules.upcomingUseCase))
+    implementation(project(Modules.allPagingMoviesUseCase))
 
     //features
     implementation(project(Modules.featureHome))
+    implementation(project(Modules.featureAllMovies))
 
     //design
     implementation(project(Modules.designCore))

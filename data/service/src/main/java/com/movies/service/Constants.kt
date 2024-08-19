@@ -10,7 +10,8 @@ object Constants {
         const val TOP_RATED = "$BASE_URL/movie/top_rated?api_key=$API_KEY"
         const val UPCOMING = "$BASE_URL/movie/upcoming?api_key=$API_KEY"
     }
-    object MoviesIdentifier{
+
+    object MoviesIdentifier {
         const val NOW_PLAYING = "now_playing"
         const val POPULAR = "popular"
         const val TOP_RATED = "top_rated"

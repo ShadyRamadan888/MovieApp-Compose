@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.navigation.compose.rememberNavController
 import com.movies.design_core.ui.theme.WatchAppTheme
+import com.movies.feature_home.screens.MockScreen
 import com.movies.watch.navigation.MoviesNavGraph
 
 class MainActivity : ComponentActivity() {

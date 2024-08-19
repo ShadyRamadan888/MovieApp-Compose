@@ -1,17 +1,20 @@
 package com.movies.service.movie
 
-import android.util.Log
 import com.movies.model.movie.MovieResponse
 import com.movies.service.Constants
 import com.movies.service.fetch
 import io.ktor.client.HttpClient
+import io.ktor.client.call.body
 import io.ktor.client.request.get
 import io.ktor.client.request.headers
+import io.ktor.client.request.url
 import io.ktor.http.HttpHeaders
 import io.ktor.client.statement.bodyAsText
-import io.ktor.http.HttpMethod
 import kotlinx.serialization.json.Json
-import io.ktor.client.request.url
+import io.ktor.client.statement.HttpResponse
+import io.ktor.http.HttpMethod
+import io.ktor.http.HttpStatusCode
+import java.net.URI
 
 class MovieApiService(private val client: HttpClient) {
 
@@ -30,10 +33,21 @@ class MovieApiService(private val client: HttpClient) {
         )
     }
 
-    suspend fun getAllPopularMovies(page: Int = 1) =
-        client.fetch<MovieResponse> {
-            url("https://api.themoviedb.org/3/movie/popular?page=$page&api_key=e0bd6b7b07bcd271f8b131a201f58222")
+    suspend fun getAllPopularMovies(
+        apiKey: String,
+        page: Int = 1,
+        category: String
+    ): com.movies.service.Result<MovieResponse> {
+        return client.fetch<MovieResponse> {
+            url(buildUrl(apiKey, page, category))
             method = HttpMethod.Get
         }
+    }
+
+    private fun buildUrl(apiKey: String, page: Int, category: String): String {
+        return URI("${Constants.BASE_URL}/movie/$category")
+            .resolve("?page=$page&api_key=$apiKey")
+            .toString()
+    }
 }
 

@@ -1,6 +1,7 @@
 package com.movies.watch.setup
 
 import android.content.Context
+import com.example.all_movies_usecase.di.pagingMoviesModule
 import com.movies.movies_usecase.di.PopularMoviesUseCaseModule
 import com.movies.now_playing_usecase.di.nowPlayingModule
 import com.movies.repo.di.repoModule
@@ -30,5 +31,6 @@ private fun getKoinModules(): List<Module> = listOf(
     topRatedMoviesModule,
     viewModelModule,
     nowPlayingModule,
-    upcomingMoviesModule
+    upcomingMoviesModule,
+    pagingMoviesModule
 )

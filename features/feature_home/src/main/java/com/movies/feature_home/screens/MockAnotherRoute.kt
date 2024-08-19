@@ -12,43 +12,43 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 
+//
+//private const val ROUTE = "allMoviesScreen"
+//
+//fun NavController.navigateToAllMoviesScreen(categoryName: String) {
+//    navigate("$ROUTE/$categoryName")
+//    Log.v("SHR", categoryName)
+//}
+//
+//fun NavGraphBuilder.allMoviesRoute(
+//    navHostController: NavHostController,
+//) {
+//    composable(
+//        "$ROUTE/{${AllMoviesArguments.CATEGORY}}",
+//        arguments = listOf(
+//            navArgument(AllMoviesArguments.CATEGORY) { NavType.StringType }
+//        )
+//    ) {
+//        MockScreen(
+//            AllMoviesArguments.CATEGORY,
+//            navHostController
+//        )
+//    }
+//}
 
-private const val ROUTE = "allMoviesScreen"
+//class AllMoviesArguments(savedStateHandle: SavedStateHandle) {
+//    val category: String = checkNotNull(savedStateHandle[CATEGORY])
+//
+//    companion object {
+//        const val CATEGORY = "category"
+//    }
+//}
 
-fun NavController.navigateToAllMoviesScreen(categoryName: String) {
-    navigate("$ROUTE/$categoryName")
-    Log.v("SHR", categoryName)
-}
-
-fun NavGraphBuilder.allMoviesRoute(
-    navHostController: NavHostController,
-) {
-    composable(
-        "$ROUTE/{${AllMoviesArguments.CATEGORY}}",
-        arguments = listOf(
-            navArgument(AllMoviesArguments.CATEGORY) { NavType.StringType }
-        )
-    ) {
-        MockScreen(
-            AllMoviesArguments.CATEGORY,
-            navHostController
-        )
-    }
-}
-
-class AllMoviesArguments(savedStateHandle: SavedStateHandle) {
-    val category: String = checkNotNull(savedStateHandle[CATEGORY])
-
-    companion object {
-        const val CATEGORY = "category"
-    }
-}
-
-@Composable
-fun MockScreen(
-    categoryName: String,
-    navHostController: NavHostController
-) {
-    Text(categoryName)
-}
+//@Composable
+//fun MockScreen(
+//    categoryName: String,
+//    navHostController: NavHostController
+//) {
+//    Text(categoryName)
+//}
 

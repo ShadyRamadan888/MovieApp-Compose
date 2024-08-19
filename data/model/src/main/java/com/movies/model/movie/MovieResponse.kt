@@ -13,4 +13,14 @@ data class MovieResponse(
     val totalPages: Int? = null,
     @SerialName("total_results")
     val totalResults: Int? = null,
+    @SerialName("dates")
+    val dates: Dates? = null
+)
+
+@Serializable
+data class Dates(
+    @SerialName("maximum")
+    val maximum:String,
+    @SerialName("minimum")
+    val minimum:String
 )

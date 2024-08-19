@@ -12,10 +12,12 @@ object Modules {
     const val topRatedMoviesUseCase = ":domain:top_rated_movies_usecase"
     const val nowPlayingUseCase = ":domain:now_playing_usecase"
     const val upcomingUseCase = ":domain:upcoming_usecase"
+    const val allPagingMoviesUseCase = ":domain:all_movies_usecase"
 
     //design
     const val designCore = ":design_core"
 
     //features
     const val featureHome = ":features:feature_home"
+    const val featureAllMovies = ":features:feature_all_movies"
 }
