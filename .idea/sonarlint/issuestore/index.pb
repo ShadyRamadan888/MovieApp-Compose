@@ -299,3 +299,5 @@ $domain/all_movies_usecase/.gitignore,c\0\c0f51be1ad1fcfd2dc3bf636f413f8579e36a
 ,domain/all_movies_usecase/consumer-rules.pro,e\4\e41a24c745cbf7d082f1b348f37c797859d73e78
 ˜
 hdomain/all_movies_usecase/src/androidTest/java/com/example/all_movies_usecase/ExampleInstrumentedTest.kt,1\9\193a5ea5d5bfa05fe1ed064c1bb4b95c03e79dcd
+r
+Bdesign_core/src/main/java/com/movies/design_core/ui/theme/Theme.kt,7\a\7ae1e4c42431986dd2a720549d7de048bd68e076
