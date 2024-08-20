@@ -28,6 +28,7 @@
             <option value="$PROJECT_DIR$/data/service" />
             <option value="$PROJECT_DIR$/design_core" />
             <option value="$PROJECT_DIR$/domain" />
+            <option value="$PROJECT_DIR$/domain/all_movies_usecase" />
             <option value="$PROJECT_DIR$/domain/now_playing_usecase" />
             <option value="$PROJECT_DIR$/domain/popular_movies_usecase" />
             <option value="$PROJECT_DIR$/domain/top_rated_movies_usecase" />
