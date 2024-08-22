@@ -1,5 +1,6 @@
 package com.movies.design_core.components.sections
 
+import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.lazy.LazyRow
@@ -24,6 +25,7 @@ fun UpcomingMovieHorizontalSection(
 
     var upcomingMovies by remember { mutableStateOf(emptyList<Movie>()) }
     var isUpcomingMoviesLoading by remember { mutableStateOf(true) }
+
 
     when (loadUpcomingMoviesUiState) {
         is SectionUiState.Loading -> isUpcomingMoviesLoading = true
