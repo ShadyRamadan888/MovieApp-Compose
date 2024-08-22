@@ -36,7 +36,7 @@ class HomeViewModel(
         viewModelScope.launch {
             upcomingMoviesUseCase.invoke(Constants.MoviesEndpoints.UPCOMING)
                 .map { SectionUiState.Success(it) }
-                .catch { _upcomingMoviesUiState.value = SectionUiState.Loading }
+                .catch { _upcomingMoviesUiState.value = SectionUiState.Error(it) }
                 .collect { _upcomingMoviesUiState.value = it }
         }
     }

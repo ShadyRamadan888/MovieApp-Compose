@@ -1,5 +1,6 @@
 package com.movies.repo.movies
 
+import android.util.Log
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
@@ -21,7 +22,8 @@ class MoviesRepoImpl(
     }
 
     override fun getPagingMoviesByCategory(category: String): Flow<PagingData<Movie>> {
-        return Pager(
+
+        val pager = Pager(
             config = PagingConfig(pageSize = 20),
             pagingSourceFactory = {
                 MoviePagingSource(
@@ -30,6 +32,7 @@ class MoviesRepoImpl(
                     category
                 )
             }
-        ).flow
+        )
+        return pager.flow
     }
 }

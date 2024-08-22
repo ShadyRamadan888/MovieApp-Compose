@@ -1,5 +1,6 @@
 package com.movies.service.factories
 
+import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.movies.model.movie.Movie
@@ -21,7 +22,6 @@ open class MoviePagingSource(
         val page = params.key ?: 1
 
         return try {
-            // Fetch movies from API
             val result: Result<MovieResponse> = apiService.getAllPopularMovies(apiKey, page, category)
 
             // Handle the result and transform it to LoadResult.Page or LoadResult.Error

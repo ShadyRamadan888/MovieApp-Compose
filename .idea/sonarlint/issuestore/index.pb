@@ -5,8 +5,6 @@ b
 2app/src/main/java/com/movies/watch/MainActivity.kt,6\8\683f84fa12d12d07bad2ef185b4bf21f52d818b2
 q
 Adata/service/src/main/java/com/movies/service/di/ServiceModule.kt,d\f\df754c4ecebde97293f847717038178c374a519b
-}
-Mdata/service/src/main/java/com/movies/service/factories/ResultPagingSource.kt,4\d\4db679d058752d4c53548c70eafdea080588821b
 Å
 Qfeatures/feature_home/src/main/java/com/movies/feature_home/screens/HomeScreen.kt,d\c\dcc8f91de1403df5a365ded3d94deb99c45f7532
 I
@@ -187,8 +185,6 @@ G.idea/sonarlint/issuestore/d/d/dd6eaa9a1fd058608d8de11db5cf82adc70a22bc,c\6\c6
 Rdomain/movies_usecase/build/intermediates/incremental/mergeDebugShaders/merger.xml,d\0\d0f95869a50e1d5f5154b36cc7b30ba52a4f7279
 É
 Sdomain/movies_usecase/build/intermediates/incremental/packageDebugAssets/merger.xml,4\0\40ee30caf5e2079f849f23ad438b64e5247fc85c
-Å
-Q.idea/sonarlint/securityhotspotstore/4/d/4db679d058752d4c53548c70eafdea080588821b,c\f\cf504d6a314213b7ed4fcda1d230bec887b4e025
 S
 #buildSrc/src/main/kotlin/Modules.kt,9\8\9838349f15f060c03457518e2b77bc6242a79db5
 Y
@@ -223,8 +219,6 @@ I
 Tfeatures/feature_home/src/main/java/com/movies/feature_home/screens/HomeViewModel.kt,9\5\9521438a6361012a8cd7ddc91b35fc19aabdacf6
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
-Å
-Qfeatures/feature_home/src/main/java/com/movies/feature_home/screens/MockScreen.kt,3\e\3e873a46391dabf7c550130f959076d46161e4da
 é
 ^features/feature_home/src/main/java/com/movies/feature_home/screens/composables/HomeContent.kt,5\8\58c80b4935c95de7d5eee8657499865a357b729e
 ì
@@ -253,8 +247,6 @@ M
 +domain/now_playing_usecase/build.gradle.kts,f\0\f0fad37c5c37bc866841e707104b8fcdf3442ac0
 î
 dfeatures/feature_all_movies/src/main/java/com/movies/feature_all_movies/navigation/AllMoviesRoute.kt,f\a\fa946af71e3fe45e87a6069405a49be1945fbba2
-á
-Wfeatures/feature_home/src/main/java/com/movies/feature_home/screens/MockAnotherRoute.kt,3\6\3641f800616fc6f49278521cd462a5622b27bbc9
 V
 &features/feature_home/build.gradle.kts,5\3\53a7a41c6ca1d87755ef563384231b4b1b09bcac
 î
@@ -301,3 +293,11 @@ $domain/all_movies_usecase/.gitignore,c\0\c0f51be1ad1fcfd2dc3bf636f413f8579e36a
 hdomain/all_movies_usecase/src/androidTest/java/com/example/all_movies_usecase/ExampleInstrumentedTest.kt,1\9\193a5ea5d5bfa05fe1ed064c1bb4b95c03e79dcd
 r
 Bdesign_core/src/main/java/com/movies/design_core/ui/theme/Theme.kt,7\a\7ae1e4c42431986dd2a720549d7de048bd68e076
+J
+data/repo/build.gradle.kts,3\c\3c0082761659b68be590a0418a4a0a574152bbcf
+ó
+gdesign_core/src/main/java/com/movies/design_core/components/sections/TopRatedMoviesHorizontalSection.kt,0\b\0b506b9e4fb31a2017e08c8bc9844b47f32590d1
+ñ
+fdesign_core/src/main/java/com/movies/design_core/components/sections/UpcomingMovieHorizontalSection.kt,c\f\cf20a8201786b20a57add536716dd9d6631dd43e
+o
+?data/model/src/main/java/com/movies/model/base/PagingUiState.kt,0\8\08d5a9cb7d59bec426be60dfe5018dec7b378341
